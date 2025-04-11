@@ -24,7 +24,7 @@ logger.success('Snowflake connection successfully established');
 
 let input: string = printInputCommands().toLowerCase();
 
-let tableName = 'MAX_TEST'
+const tableName = process.env.SNOWFLAKE_TABLE ?? 'TEST_TABLE';
 
 try {
 while (input !== 'x') {
@@ -57,9 +57,7 @@ while (input !== 'x') {
   input = printInputCommands().toLowerCase();
 };
 } catch (error) {
-  if (snowflakeConnection) {
   await snowflakeConnection.disconnect();
-  }
   throw error;
 }
 
