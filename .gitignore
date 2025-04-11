@@ -1,0 +1,11 @@
+Thumbs.db
+.DS_Store
+.vscode
+.coverage
+cdk.out/
+*.orig
+node_modules/
+snowflake/*.js
+.env.local
+.env
+snowflake.log
